@@ -1,0 +1,34 @@
+[package]
+name = "rust-discordbot"
+version = "0.1.0"
+authors = ["Reimu Hakurei <WinLinux1028.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+incremental = true
+debug-assertions = true
+overflow-checks = true
+
+[dependencies]
+chrono = "0.4"
+useful_static = "0.2"
+toml = "0.5"
+
+[dependencies.serenity]
+version = "0.10"
+default-features = true
+features = ["collector"]
+
+[dependencies.tokio]
+version = "1"
+default-features = true
+features = ["full"]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
